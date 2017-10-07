@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="connectionApp" class="com.github.alexv1993.ConnectionAppImpl" scope="prototype"/>
+
+    <util:map map-class="java.util.TreeMap" id="states" key-type="java.lang.Integer" value-type="java.lang.String">
+        <entry key="10" value="Germany"/>
+        <entry key="2" value="Spain"/>
+        <entry key="14" value="France"/>
+        <entry key="3" value="Italy"/>
+    </util:map>
+
+
+    <util:map map-class="java.util.TreeMap" id="people" key-type="java.lang.String"
+              value-type="com.github.alexv1993.Person">
+        <entry key="1240i54" value-ref="ref1"/>
+        <entry key="1564i55" value-ref="ref1"/>
+        <entry key="4540i56" value-ref="ref1"/>
+
+    </util:map>
+
+    <bean id="ref1" class="com.github.alexv1993.Person">
+        <constructor-arg name="value" value="Tom"/>
+    </bean>
+    <bean id="ref2" class="com.github.alexv1993.Person">
+        <constructor-arg name="value" value="Bill"/>
+    </bean>
+    <bean id="ref3" class="com.github.alexv1993.Person">
+        <constructor-arg name="value" value="Nick`"/>
+    </bean>
+
+
+</beans>
